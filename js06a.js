@@ -15,5 +15,18 @@ window.addEventListener("load",function(){
       let model=orderForm.elements.model;
       //select model selection when form opens
       model.focus();
+      //calc cost of order
+      calcOrder();
+      function calcOrder(){
+            //determine selected model
+            let mIndex=model.selectedIndex;
+            let mValue=model.options[mIndex].value;
+            //determine selected quanity
+            let qIndex=orderForm.elements.qty.selectedIndex;
+            let quantity=orderForm.elements.qty[qIndex].value;
+            //model cost times quantity
+            let modelCost=mValue*quantity;
+            orderForm.elements.modelCost.value=modelCost;
+      }
 });
 
