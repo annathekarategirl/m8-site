@@ -4,8 +4,8 @@
       Chapter case
 
       Order Form Code
-      Author: 
-      Date:   
+      Author: annaMoore
+      Date:   3/2/2026
 
       Filename: js06a.js
  */
