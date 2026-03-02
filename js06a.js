@@ -34,7 +34,7 @@ window.addEventListener("load",function(){
             orderForm.elements.planCost.value=planCost.toLocaleString("en-US",{style:"currency",currency:"USD"});
             //calc order subtotal
             let subtotal=modelCost+planCost;
-            orderForm.elements.subtotal.value=subtotal;
+            orderForm.elements.subtotal.value=subtotal.toLocaleString("en-US",{style:"currency",currency:"USD"});
             //calc sales tax
             let salesTax=subtotal*0.05;
             orderForm.elements.salesTax.value=salesTax.toLocaleString("en-US",{style:"currency",currency:"USD"});
