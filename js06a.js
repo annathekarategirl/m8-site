@@ -27,6 +27,11 @@ window.addEventListener("load",function(){
             //model cost times quantity
             let modelCost=mValue*quantity;
             orderForm.elements.modelCost.value=modelCost;
+            //retrieve cost of protection plan
+            let planValue=document.querySelector('input[name="plan"]:checked');
+            //charge plan to each item ordered
+            let planCost=planValue*quantity;
+            orderForm.elements.planCost.value=planCost;
       }
 });
 
