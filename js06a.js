@@ -38,6 +38,9 @@ window.addEventListener("load",function(){
             //calc sales tax
             let salesTax=subtotal*0.05;
             orderForm.elements.salesTax.value=salesTax;
+            //calculate the total cost of the order
+            let totalCost=subtotal+salesTax;
+            orderForm.elements.totalCost.value=totalCost;
       }
 });
 
