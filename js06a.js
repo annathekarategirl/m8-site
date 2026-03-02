@@ -32,6 +32,12 @@ window.addEventListener("load",function(){
             //charge plan to each item ordered
             let planCost=planValue*quantity;
             orderForm.elements.planCost.value=planCost;
+            //calc order subtotal
+            let subtotal=modelCost+planCost;
+            orderForm.elements.subtotal.value=subtotal;
+            //calc sales tax
+            let salesTax=subtotal*0.05;
+            orderForm.elements.salesTax.value=salesTax;
       }
 });
 
