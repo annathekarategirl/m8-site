@@ -46,6 +46,10 @@ window.addEventListener("load",function(){
             //calculate the total cost of the order
             let totalCost=subtotal+salesTax;
             orderForm.elements.totalCost.value=totalCost.toLocaleString("en-US",{style:"currency",currency:"USD"});
+
+            orderForm.elements.modelName.value=model.options[mIndex].text;
+            let selectedPlan=document.querySelector('input[name="plan"]:checked');
+            orderForm.elements.planName.value=selectedPlan.labels[0].textContent;
       }
 });
 
