@@ -26,7 +26,7 @@ window.addEventListener("load",function(){
             let quantity=orderForm.elements.qty[qIndex].value;
             //model cost times quantity
             let modelCost=mValue*quantity;
-            orderForm.elements.modelCost.value=modelCost.modelCost.toLocaleString("en-US",{style:"currency",currency:"USD"});
+            orderForm.elements.modelCost.value=modelCost.toLocaleString("en-US", {style: "currency", currency:" USD"});
             //retrieve cost of protection plan
             let planValue=document.querySelector('input[name="plan"]:checked').value;
             //charge plan to each item ordered
