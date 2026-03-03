@@ -18,7 +18,7 @@ function validateName() {
    if (cardName.validity.valueMissing){
       cardName.setCustomValidity("Enter your name as it appears on the card");
 
-   }else{
+   } else {
       cardName.setCustomValidity("");
    }
 }
