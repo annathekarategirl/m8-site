@@ -9,8 +9,16 @@
 
       Filename: js06b.js
  */
+//check if oweners name is entered on the cardfunc
+function validateName() {
+   let cardName=document.getElementById("cardName");
+   if (cardName.validity.valueMissing){
+      cardName.setCustomValidity("Enter your name as it appears on the card");
 
-
+   }else{
+      cardName.setCustomValidity("");
+   }
+}
 
 
 
