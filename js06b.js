@@ -14,6 +14,7 @@ let subButton=document.getElementById("subButton");
 //Validate the payment when the submit button is clicked
 subButton.addEventListener('click',validateName);
 subButton.addEventListener("click",validateCard);
+subButton.addEventListener("click",validateNumber);
 function validateName() {
    let cardName=document.getElementById("cardName");
    if (cardName.validity.valueMissing){
@@ -33,7 +34,18 @@ function validateCard(){
    }
 }
 
-
+//check if card num is valid
+function validateNumber(){
+   let cNum=document.getElementById("cardNumber")
+   if (cNum.validity.valueMissing){
+      cNum.setCustomValidity("Enter your card number");
+   }
+   else if (cNum.validity.patternMismatch){
+      cNum.setCustomValidity("Enter a valid card number");
+   } else {
+      cNum.setCustomValidity("");
+   }
+}
 
 
 
