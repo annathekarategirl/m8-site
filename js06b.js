@@ -13,6 +13,7 @@
 let subButton=document.getElementById("subButton");
 //Validate the payment when the submit button is clicked
 subButton.addEventListener('click',validateName);
+subButton.addEventListener("click",validateCard);
 function validateName() {
    let cardName=document.getElementById("cardName");
    if (cardName.validity.valueMissing){
@@ -22,7 +23,15 @@ function validateName() {
       cardName.setCustomValidity("");
    }
 }
-
+//check if a credit card has been selected
+function validateCard(){
+   let card=document.forms.payment.elements.credit[0];
+   if(card.validity.valueMissing){
+      card.setCustomValidity("Select your credit card")
+   } else {
+      card.setCustomValidity('');
+   }
+}
 
 
 
