@@ -45,7 +45,12 @@ function validateNumber(){
    }
    else if (cNum.validity.patternMismatch){
       cNum.setCustomValidity("Enter a valid card number");
-   } else {
+   }
+   else if (luhn(cNum.value)===false){
+      cNum.setCustomValidity("Enter a legitimate card number")
+   }
+   
+   else {
       cNum.setCustomValidity("");
    }
 }
@@ -78,7 +83,7 @@ function validateCVC(){
       cvc.setCustomValidity("Enter CVC number");
    } else if ((card==="amex")&& !(/^\d{4}$/.test(cvc.value))){
       cvc.setCustomValidity("Enter a 4 digit number");
-   } else if ((card==="amex")&& !(/^\d{3}$/.test(cvc.value))){
+   } else if ((card!=="amex")&& !(/^\d{3}$/.test(cvc.value))){
       cvc.setCustomValidity("Enter a 3 digit number");}
       else{
          cvc.setCustomValidity("");
