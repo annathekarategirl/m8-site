@@ -15,6 +15,8 @@ let subButton=document.getElementById("subButton");
 subButton.addEventListener('click',validateName);
 subButton.addEventListener("click",validateCard);
 subButton.addEventListener("click",validateNumber);
+subButton.addEventListener('click',validateMonth);
+subButton.addEventListener('click',validateYear);
 function validateName() {
    let cardName=document.getElementById("cardName");
    if (cardName.validity.valueMissing){
@@ -47,9 +49,24 @@ function validateNumber(){
    }
 }
 
+//Check month is selected for expiration date
+function validateMonth(){
+   let month=document.getElementById("expMonth");
+   if(month.selectedIndex === 0){
+      month.setCustomValidity("Select Expiration month");
+   } else{
+      month.setCustomValidity("")
+   }
+}
 
-
-
+function validateYear(){
+   let year=document.getElementById("expYear");
+   if (year.selectedIndex===0){
+      year.setCustomValidity("Select the expiration year");
+   } else {
+      year.setCustomValidity("")
+   }
+}
 
 
 
